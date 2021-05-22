@@ -11,6 +11,7 @@ This repo is created for Keep developing anywhere anytime quickly!
 
 * Rejetto for awesome tool 🤩
 * [Nait lee](https://github.com/NaitLee) for base code 😍
+* [Remix icon](https://remixicon.com) for exciting icon 😘
 
 ## Things that currently need to added 😎
 * Grid / List view
