@@ -6,6 +6,7 @@ Run on [HFS 2.4 RC](https://github.com/rejetto/hfs2/releases)
 
 This repo is created for Keep developing anywhere anytime quickly! 
 
+## Currently only support desktop resolution!
 
 ## Special Thanks 💓
 
