@@ -27,7 +27,6 @@ add bytes=switch|{.cut|-1||$1.}|,|0,1,2,3,4,5,6,7,8,9|$1 Bytes|K,M,G,T|$1Bytes
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#000000"/>
     <meta name="description" content="{.!My Drive..}" />
     <link rel="stylesheet" href="/~takeback-general.css" defer />
     {.if|{.!_use_font.}|<link rel="stylesheet" href="/~Roboto-font.css" defer />.}
@@ -70,15 +69,10 @@ add bytes=switch|{.cut|-1||$1.}|,|0,1,2,3,4,5,6,7,8,9|$1 Bytes|K,M,G,T|$1Bytes
             <button type="submit"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28"><path fill="none" d="M0 0h24v24H0z"/><path d="M18.031 16.617l4.283 4.282-1.415 1.415-4.282-4.283A8.96 8.96 0 0 1 11 20c-4.968 0-9-4.032-9-9s4.032-9 9-9 9 4.032 9 9a8.96 8.96 0 0 1-1.969 5.617zm-2.006-.742A6.977 6.977 0 0 0 18 11c0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7a6.977 6.977 0 0 0 4.875-1.975l.15-.15z"/></svg></button>
         </div>
     <div class="login-con">
-        <!-- <a href="/~login#%encoded-folder%">
-         <svg class="user" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 2c5.52 0 10 4.48 10 10s-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2zM6.023 15.416C7.491 17.606 9.695 19 12.16 19c2.464 0 4.669-1.393 6.136-3.584A8.968 8.968 0 0 0 12.16 13a8.968 8.968 0 0 0-6.137 2.416zM12 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" fill="#fff"/></svg>
-         %user%</a>-->
-            <span class="login-con">
-                <span><svg class="user" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 2c5.52 0 10 4.48 10 10s-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2zM6.023 15.416C7.491 17.606 9.695 19 12.16 19c2.464 0 4.669-1.393 6.136-3.584A8.968 8.968 0 0 0 12.16 13a8.968 8.968 0 0 0-6.137 2.416zM12 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" fill="#fff"/></svg>
- <p>%user%</p></span>
+            <span class="login-span">
                 {.if|%user%|
                     <a class="login-l" href="/~login#%encoded-folder%"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 14v8H4a8 8 0 0 1 8-8zm0-1c-3.315 0-6-2.685-6-6s2.685-6 6-6 6 2.685 6 6-2.685 6-6 6zm2.595 5.812a3.51 3.51 0 0 1 0-1.623l-.992-.573 1-1.732.992.573A3.496 3.496 0 0 1 17 14.645V13.5h2v1.145c.532.158 1.012.44 1.405.812l.992-.573 1 1.732-.992.573a3.51 3.51 0 0 1 0 1.622l.992.573-1 1.732-.992-.573a3.496 3.496 0 0 1-1.405.812V22.5h-2v-1.145a3.496 3.496 0 0 1-1.405-.812l-.992.573-1-1.732.992-.572zM18 17a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" fill="#fff"/></svg></a>|
-                    <a href="/~login#%encoded-folder%">{.!Login.}</a>
+                    <a href="/~login#%encoded-folder%"><svg class="user" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 2c5.52 0 10 4.48 10 10s-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2zM6.023 15.416C7.491 17.606 9.695 19 12.16 19c2.464 0 4.669-1.393 6.136-3.584A8.968 8.968 0 0 0 12.16 13a8.968 8.968 0 0 0-6.137 2.416zM12 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" fill="#fff"/></svg></a>
                 .}
             </span>
     </div>
@@ -1519,20 +1513,25 @@ a svg:hover {
     height: 1em;
     border: 1px solid currentColor;
 }#dialog .dialog .animation-show p a.ok-btn {color: #55ff49;}
-.log-mang{text-align: center;width: 80%;grid-area: part1;}
+.log-mang{text-align: center;grid-area: part1;}
 .log-mang .log-usr span{font-size: 24px;font-family: sans-serif;font-weight: bold;color: #9400ff;}
 .log-mang .log-usr  #logout{color: #ff4954;font-family: sans-serif;}
 #changepwd p{font-weight: bold;font-size: 24px;color: #55ff46;}
-.log-in{grid-area: part1;text-align: center;width: 80%;}
+.log-in{grid-area: part1;text-align: center;}
 .log-in h1{color: #55ff49;}
 .log-in form input{padding: 8px;font-size: 16px;margin: 20px 0;background: #fff;border-radius: 5px;border: 1px solid #fff;}
 #changepwd input{padding: 8px;font-size: 16px;margin: 20px 0;background: #fff;border-radius: 5px;border: 1px solid #fff;}
 
-@media (max-width: 950px) {
+@media only screen and (max-width: 850px) {
     section#tooltip {
         bottom: unset;
         top: 1.8em;
     }
+    nav .s-div .search-control{width: 180px;}
+    nav .login-con{margin-right: 6px;}
+    span.login-con > a{margin-left: 2px;}
+    nav .logo{margin: 0 0 0 10px;}
+    .assigner .file-n{width: 60%;}
 }
 /* </style> */
 // </style>
@@ -1984,11 +1983,7 @@ nav .login-con {
     margin-right: 12px;
 }
 nav .login-con span{display: flex;}
-nav .login-con span svg {
-    width: 32px;
-    height: 32px;
-    margin: auto 0;
-}
+nav .login-con span svg {width: 32px;height: 32px;margin: auto 0;position: relative;top: 3px;}
 span.login-con > a{margin: auto 0;margin-left: 10px;}
 span.login-con  span p{
     margin-left: 10px;
