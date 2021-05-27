@@ -2,7 +2,7 @@
 HFS Customize template
 
 
-Run on [HFS 2.4 RC](https://github.com/rejetto/hfs2/releases)
+Run only on (Windows) [HFS 2.4 RC](https://github.com/rejetto/hfs2/releases)
 
 This repo is created for Keep developing anywhere anytime quickly! 
 
@@ -21,4 +21,4 @@ This repo is created for Keep developing anywhere anytime quickly!
 
 
 ## Version 
-###### Currently in Development
+###### v0.1 Bugy !
