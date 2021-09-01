@@ -293,15 +293,34 @@ _index_data=
 
 [file]
 
-<tr class="file">
-    <td><a href="%item-url%">%item-name%</a><p>%item-comment%</p></td>
-    <td>{.mm-dd-yyyy.}</td>
-    <td>%item-size%B</td>
-</tr>
+{.if|{.=|{.cookie|view.}|grid.}|{:
+    <div class="file">
+        <a href="%item-url%">%item-name%</a><p>%item-comment%</p>
+    </div>
+:}|{:
+    <tr class="file">
+        <td><a href="%item-url%">%item-name%</a><p>%item-comment%</p></td>
+        <td>{.mm-dd-yyyy.}</td>
+        <td>%item-size%B</td>
+    </tr>
+:}.}
 
 
 [files]
-
+<!-- {.cookie|view.} -->
+{.if|{.and|{.!=|{.cookie|view.}|list.}|{.!=|{.cookie|view.}|grid.}.}|{:
+    {.cookie|view|value=list.}
+:}.}
+{.if|{.=|{.postvar|view.}|grid.}|{:
+    {.add to log|> .. Change view of %ip% to grid.}
+    {.cookie|view|value=grid.}
+    {.redirect|..}
+:}.}
+{.if|{.=|{.postvar|view.}|list.}|{:
+    {.add to log|> .. Change view of %ip% to list.}
+    {.cookie|view|value=list.}
+    {.redirect|..}
+:}.}
 <!-- Filelist -->
 <section class="part1">
 <section class="additional-panel">
@@ -320,8 +339,40 @@ _index_data=
     {.if|{.can mkdir.}|
     <svg title="{.!New folder.}" id='newfolderBtn' onclick='ask(this.innerHTML, "text", name=> ajax("mkdir", { name:name }))' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12.414 5H21a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h7.414l2 2zM11 12H8v2h3v3h2v-3h3v-2h-3V9h-2v3z" fill="#fff"/></svg>
     .}
-    <svg id="file-v-g" class="file-v-g" onclick="gridView()" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="240" height="240"><path fill="none" d="M0 0h24v24H0z"/><path d="M14 10v4h-4v-4h4zm2 0h5v4h-5v-4zm-2 11h-4v-5h4v5zm2 0v-5h5v4a1 1 0 0 1-1 1h-4zM14 3v5h-4V3h4zm2 0h4a1 1 0 0 1 1 1v4h-5V3zm-8 7v4H3v-4h5zm0 11H4a1 1 0 0 1-1-1v-4h5v5zM8 3v5H3V4a1 1 0 0 1 1-1h4z" fill="#fff"/></svg>
-    <svg id="file-v-l" class="file-v-l" onclick="gridView()" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="240" height="240"><path fill="none" d="M0 0h24v24H0z"/><path d="M11 4h10v2H11V4zm0 4h6v2h-6V8zm0 6h10v2H11v-2zm0 4h6v2h-6v-2zM3 4h6v6H3V4zm2 2v2h2V6H5zm-2 8h6v6H3v-6zm2 2v2h2v-2H5z" fill="#fff"/></svg>
+    {.if|{.=|{.cookie|view.}|list.}|{:
+        <script>
+            function gridView() {
+                let form = document.createElement('form');
+                let input = document.createElement('input');
+                form.style.display = 'none';
+                form.method = 'post';
+                input.type = 'hidden';
+                input.name = 'view';
+                input.value = 'grid';
+                form.appendChild(input);
+                document.body.appendChild(form);
+                form.submit();
+            }
+        </script>
+        <svg id="file-v-g" class="file-v-g" onclick="gridView()" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="240" height="240"><path fill="none" d="M0 0h24v24H0z"/><path d="M14 10v4h-4v-4h4zm2 0h5v4h-5v-4zm-2 11h-4v-5h4v5zm2 0v-5h5v4a1 1 0 0 1-1 1h-4zM14 3v5h-4V3h4zm2 0h4a1 1 0 0 1 1 1v4h-5V3zm-8 7v4H3v-4h5zm0 11H4a1 1 0 0 1-1-1v-4h5v5zM8 3v5H3V4a1 1 0 0 1 1-1h4z" fill="#fff"/></svg>
+    :}.}
+    {.if|{.=|{.cookie|view.}|grid.}|{:
+        <script>
+            function gridView() {
+                let form = document.createElement('form');
+                let input = document.createElement('input');
+                form.style.display = 'none';
+                form.method = 'post';
+                input.type = 'hidden';
+                input.name = 'view';
+                input.value = 'list';
+                form.appendChild(input);
+                document.body.appendChild(form);
+                form.submit();
+            }
+        </script>
+        <svg id="file-v-l" class="file-v-l" onclick="gridView()" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="240" height="240"><path fill="none" d="M0 0h24v24H0z"/><path d="M11 4h10v2H11V4zm0 4h6v2h-6V8zm0 6h10v2H11v-2zm0 4h6v2h-6v-2zM3 4h6v6H3V4zm2 2v2h2V6H5zm-2 8h6v6H3v-6zm2 2v2h2v-2H5z" fill="#fff"/></svg>
+    :}.}
  {.if|{.get|can upload.}|
         <a class="invert" href="./~upload" data-tooltip="{.!Upload some files to this folder.}"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M3 19h18v2H3v-2zM13 5.828V17h-2V5.828L4.929 11.9l-1.414-1.414L12 2l8.485 8.485-1.414 1.414L13 5.83z" fill="rgba(255,255,255,1)"/></svg></a>
 .}    
@@ -331,7 +382,7 @@ _index_data=
 </section>
 <section class="assigner" id="assigner">
 <div class="file-n">
-<a href="../" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M10.828 12l4.95 4.95-1.414 1.414L8 12l6.364-6.364 1.414 1.414z" fill="rgba(0,0,0,1)"/></svg></a>
+<span><a href="../" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M10.828 12l4.95 4.95-1.414 1.414L8 12l6.364-6.364 1.414 1.414z" fill="rgba(0,0,0,1)"/></svg></a></span>
     <p>Name</p>
 <div class="dropdown">
 <svg onclick="sortFun()" class="dropbtn" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 13.172l4.95-4.95 1.414 1.414L12 16 5.636 9.636 7.05 8.222z" fill="#000"/></svg>
@@ -353,11 +404,17 @@ _index_data=
 </div>
 </section>
     <main>
-        <table id="files">    
-            <tbody>
+        {.if|{.=|{.cookie|view.}|grid.}|{:
+            <div id="files">
                 %list%
-            </tbody>
-        </table>
+            </div>
+        :}|{:
+            <table id="files">    
+                <tbody>
+                    %list%
+                </tbody>
+            </table>
+        :}.}
     </main>
 </section>
 <!-- Footer -->
@@ -400,17 +457,23 @@ _index_data=
 </section>
 <section class="lyrics" style="display: none;">
 </section>
-<script src="/~takeback-filelist.js" defer></script>
-
+{.if|{.=|{.cookie|view.}|list.}|{:
+    <script src="/~takeback-filelist.js" defer></script>
+:}.}
 
 
 [folder]
-
-<tr class="folder">
-    <td><a href="%item-url%">%item-name%</a><p>%item-comment%</p></td>
-    <td>{.mm-dd-yyyy.}</td>
-    <td>{.!folder.}</td>
-</tr>
+{.if|{.=|{.cookie|view.}|grid.}|{:
+    <div class="folder">
+        <a href="%item-url%">%item-name%</a><p>%item-comment%</p>
+    </div>
+:}|{:
+    <tr class="folder">
+        <td><a href="%item-url%">%item-name%</a><p>%item-comment%</p></td>
+        <td>{.mm-dd-yyyy.}</td>
+        <td>{.!folder.}</td>
+    </tr>
+:}.}
 
 
 [font.css|public|no log|cache]
@@ -1524,7 +1587,7 @@ justify-content: space-around;
 }
 
 .additional-panel .file-o .file-v-g {
-    display: none;
+    display: block;
     cursor: pointer;
 }
 @media only screen and (max-width: 850px) {
@@ -1568,7 +1631,7 @@ margin: 60px 0 10px 0;
     min-width:100%;
     margin: auto;
     white-space: nowrap;
-    position:;
+    /* position:; */
     top: 30px;
 }
 .part1 table#files td:nth-child(1) {
@@ -1752,7 +1815,23 @@ video.lyrics {
         top: 1.8em;
     }
 }
-
+div#files {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-around;
+    overflow-x: hidden;
+}
+div#files>div {
+    width: 8em;
+    height: 6em;
+}
+div#files a::before {
+    display: block;
+    transform: scale(2);
+    height: 2.4em;
+    transform-origin: top;
+}
 /* Folder */
 table#files a[href$="/"]::before {
     content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath fill='none' d='M0 0h24v24H0z'/%3E%3Cpath d='M12.414 5H21a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h7.414l2 2z' fill='rgba(255,255,255,1)'/%3E%3C/svg%3E");
@@ -1761,6 +1840,9 @@ table#files a[href$="/"]::before {
     position: relative;
     width: 1.75em;
     text-align: center;
+}
+div#files a[href$="/"]::before {
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath fill='none' d='M0 0h24v24H0z'/%3E%3Cpath d='M12.414 5H21a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h7.414l2 2z' fill='rgba(255,255,255,1)'/%3E%3C/svg%3E");
 }
 
 /* Unknown File */
@@ -1772,11 +1854,19 @@ td a::before {
     width: 1.75em;
     text-align: center;
 }
+div>a::before {
+    content: "\1f4c4";
+}
 
 /* Other */
 td a[href$=";"i]::before,    /* javascript: ...; */
 td a[href$=":"i]::before,    /* javascript: */
 td a[href*="?"i]::before {
+    content: none;
+}
+div a[href$=";"i]::before,
+div a[href$=":"i]::before,
+div a[href*="?"i]::before {
     content: none;
 }
 
