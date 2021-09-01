@@ -14,11 +14,11 @@ This repo is created for Keep developing anywhere anytime quickly!
 * [Nait lee](https://github.com/NaitLee) for base code 😍
 * [Remix icon](https://remixicon.com) for exciting icon 😘
 
-## Things that currently need to added 😎
+## Things that  added 😎
 * Grid / List view
 * Responsive for mobile devices 📱
-* All features that are in [Takeback template](https://github.com/NaitLee/Takeback-HFS-Template) maybe some not work!
+* All features that are in [Takeback template](https://github.com/NaitLee/Takeback-HFS-Template)
 
 
 ## Version 
-###### v0.1 Bugy !
+###### v0.1
