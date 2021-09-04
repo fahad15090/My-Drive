@@ -634,7 +634,7 @@ if (!NodeList.prototype.forEach) NodeList.prototype.forEach = Array.prototype.fo
     .}
 |
     {.if|%user%|
-    <section class="log-mang">
+    <section class="log-mang" id="log-mang">
         <h1>{.!Manage Account.}</h1>
         <noscript>
             <p>{.!Javascript required.}</p>
@@ -647,9 +647,9 @@ if (!NodeList.prototype.forEach) NodeList.prototype.forEach = Array.prototype.fo
         <form id="changepwd">
             <p>{.!Change password.}</p>
             <p>{.!Warning: It's insecure to change password here.}</p>
-            <input type="password" name="old" placeholder="{.!Old password.}" /><br />
-            <input type="password" name="new" placeholder="{.!New password.}" /><br />
-            <input type="password" name="verify" placeholder="{.!Enter again.}" /><br />
+            <input type="password" name="old" placeholder="{.!Old password.}" style="color: #fff;width: 15%;padding: 8px;border: 2px solid #ff4954;border-radius: 5px;background: #000;font-weight: bold;" /><br />
+            <input type="password" name="new" placeholder="{.!New password.}" style="color: #fff;width: 15%;padding: 8px;border: 2px solid #ff4954;border-radius: 5px;background: #000;font-weight: bold;" /><br />
+            <input type="password" name="verify" placeholder="{.!Enter again.}" style="color: #fff;width: 15%;padding: 8px;border: 2px solid #ff4954;border-radius: 5px;background: #000;font-weight: bold;"/><br />
             <input type="submit" value="{.!OK.}" />
         </form>
         <script src="/~sha256.js"></script>
@@ -716,13 +716,13 @@ if (!NodeList.prototype.forEach) NodeList.prototype.forEach = Array.prototype.fo
             <p>{.!Javascript required.}</p>
         </noscript>
         <p>
-            <a class="invert" href="../">&lt;&lt; {.!Back.}</a>
+            <a class="invert" href="../"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 2c5.52 0 10 4.48 10 10s-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2zm0 9V8l-4 4 4 4v-3h4v-2h-4z" fill="rgba(255,255,255,1)"/></svg></a>
         </p>
         <form>
-            <input type="text" name="username" placeholder="{.!Username.}" /><br />
-            <input type="password" name="password" placeholder="{.!Password.}" /><br />
+            <input type="text" name="username" placeholder="{.!Username.}" style="color: #fff;width: 15%;padding: 8px;border: 2px solid #ff4954;border-radius: 5px;background: #000;font-weight: bold;margin-bottom: 5px;" /><br />
+            <input type="password" name="password" placeholder="{.!Password.}" style="color: #fff;width: 15%;padding: 8px;border: 2px solid #ff4954;border-radius: 5px;background: #000;font-weight: bold;margin-bottom: 5px;"/><br />
             <label><input type="checkbox" name="remember" /> {.!Remember credentials.}</label>
-            <input type="submit" value="{.!Login.}" />
+            <input class="lgn-btn" type="submit" value="{.!Login.}" style="background: #000;color: #fff;padding: 4px 6px;border: 2px solid #ff4954;border-radius: 5PX;"/>
         </form>
         <script>
             class LoginManager {
@@ -1536,17 +1536,7 @@ margin-top: -3px;
   text-decoration: none;
   display: block;
 }
-
 .dropdown a:hover {background-color: #ddd;}
-
-.log-mang{text-align: center;grid-area: part1;}
-.log-mang .log-usr span{font-size: 24px;font-family: sans-serif;font-weight: bold;color: #9400ff;}
-.log-mang .log-usr  #logout{color: #ff4954;font-family: sans-serif;}
-#changepwd p{font-weight: bold;font-size: 24px;color: #55ff46;}
-.log-in{grid-area: part1;text-align: center;}
-.log-in h1{color: #55ff49;}
-.log-in form input{padding: 8px;font-size: 16px;margin: 20px 0;background: #fff;border-radius: 5px;border: 1px solid #fff;}
-#changepwd input{padding: 8px;font-size: 16px;margin: 20px 0;background: #fff;border-radius: 5px;border: 1px solid #fff;}
 .additional-panel {
     height: 30px;
     display: flex;
@@ -1824,14 +1814,16 @@ div#files {
 }
 div#files>div {
     width: 8em;
-    height: 6em;
+    height: 8.2em;overflow: hidden;
 }
 div#files a::before {
     display: block;
-    transform: scale(2);
-    height: 2.4em;
+    transform: scale(4);
+    height: 4.5em;
     transform-origin: top;
+    word-break: break-word;
 }
+div#files div.folder a{word-break: break-word;}
 /* Folder */
 table#files a[href$="/"]::before {
     content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath fill='none' d='M0 0h24v24H0z'/%3E%3Cpath d='M12.414 5H21a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h7.414l2 2z' fill='rgba(255,255,255,1)'/%3E%3C/svg%3E");
@@ -1875,7 +1867,7 @@ a[href$=".jpg"i]::before,
 a[href$=".webp"i]::before,
 a[href$=".png"i]::before,
 a[href$=".gif"i]::before {
-    content: "\1f4f7";
+    content:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath fill='none' d='M0 0h24v24H0z'/%3E%3Cpath d='M20 5H4v14l9.292-9.294a1 1 0 0 1 1.414 0L20 15.01V5zM2 3.993A1 1 0 0 1 2.992 3h18.016c.548 0 .992.445.992.993v16.014a1 1 0 0 1-.992.993H2.992A.993.993 0 0 1 2 20.007V3.993zM8 11a2 2 0 1 1 0-4 2 2 0 0 1 0 4z' fill='rgba(255,255,255,1)'/%3E%3C/svg%3E");
     color: black
 }
 
@@ -2386,14 +2378,10 @@ a {
     transition: all 0.3s;
     text-decoration: none;
 }
-a.invert:link, a.invert:visited {
-    color: #333333;
-    background-color: white;
-}
+
 a.invert:hover {
     color: white;
     background-color: transparent;
-    border: 1px solid currentColor;
 }
 a.invert:active {
     color: white;
@@ -2423,7 +2411,7 @@ hr, .linebottom {
     width: 60%;
     left: 20%;
     top: 33%;
-    border: 1px solid currentColor;
+    border: 1px solid currentColor;z-index: 1;
 }
 .dialog .prompt-input {
     width: 12em;
