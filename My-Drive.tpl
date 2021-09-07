@@ -382,10 +382,10 @@ _index_data=
 </section>
 <section class="assigner" id="assigner">
 <div class="file-n">
-<span><a href="../" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M10.828 12l4.95 4.95-1.414 1.414L8 12l6.364-6.364 1.414 1.414z" fill="rgba(0,0,0,1)"/></svg></a></span>
+<span style="margin: 0 10px 0 0;"><a href="../" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M10.828 12l4.95 4.95-1.414 1.414L8 12l6.364-6.364 1.414 1.414z" fill="rgba(0,0,0,1)"/></svg></a></span>
     <p>Name</p>
 <div class="dropdown">
-<svg onclick="sortFun()" class="dropbtn" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 13.172l4.95-4.95 1.414 1.414L12 16 5.636 9.636 7.05 8.222z" fill="#000"/></svg>
+<svg onclick="sortFun()" class="dropbtn" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"  style="margin: 3px 0 0 0;"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 13.172l4.95-4.95 1.414 1.414L12 16 5.636 9.636 7.05 8.222z" fill="#000"/></svg>
 <div id="myDropdown" class="dropdown-content">
 <a class="invert" href="./?sort=e" data-tooltip="{.!Sort by extension.}">Sort by extension</a>
 <a class="invert" href="./?sort=n" data-tooltip="{.!Sort by name.}">Sort by name</a>
@@ -418,12 +418,7 @@ _index_data=
     </main>
 </section>
 <!-- Footer -->
-<section class="part2">
-    <p>
-        <a href="./~folder.tar" data-tooltip="{.!Save files in this folder to an archive.}">[ {.!Archive.} ]</a>
-    </p>
-    <div class="blank"></div>
-</section>
+
 <!-- Dashboard -->
 <section class="part3">
     <span class="left">
@@ -1497,21 +1492,23 @@ nav .s-div button {
     z-index: 1;
 }
 .assigner p{
-    display: block;
-margin-top: -3px;
+    display: contents;
 }
 .assigner .file-n {
-    display: flex;width: 75%;
+    display: flex;flex: 72%;
 }
 .assigner .file-n a svg{position: relative;top: 3px;left: 3px;}.assigner .file-m a svg{position: relative;top: 3px;}.assigner .file-s a svg{position: relative;top: 3px;}
 .assigner .file-m{
-    width: 15%;display: flex;
+    display: flex;flex-wrap: wrap;flex: auto;
 }
 .assigner .file-s{
-    width: 10%;display: flex;
+    display: flex;flex: auto;flex-wrap: wrap;
 }
-.assigner .file-n a{margin-right: 10px;}.assigner .file-s a{margin-left: 10px;}
+.assigner .file-s a{margin-left: 10px;}
 .assigner .file-s p{margin-left: 10px;}.assigner .file-m a{margin-left: 10px;}
+.dropbtn {
+  cursor: pointer;position: relative;top: 3px;
+}
 .dropbtn {
   cursor: pointer;position: relative;top: 3px;
 }
@@ -1527,7 +1524,7 @@ margin-top: -3px;
   min-width: 180px;
   overflow: auto;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
+  z-index: 1;font-size: 16px;
 }
 
 .dropdown-content a {
@@ -1536,7 +1533,10 @@ margin-top: -3px;
   text-decoration: none;
   display: block;
 }
-.dropdown a:hover {background-color: #ddd;}
+
+.dropdown a:hover {background-color: #ff4954;color: #fff;}
+
+.show {display: block;background: #1b1b1b;border: 2px solid #ff4954;border-radius: 5px;}
 .additional-panel {
     height: 30px;
     display: flex;
@@ -1843,7 +1843,7 @@ td a::before {
     display: inline-block;
     position: relative;
     width: 1.75em;
-    text-align: center;
+    text-align: center;position: relative;top: 3px;
 }
 div>a::before {
     content:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath fill='none' d='M0 0h24v24H0z'/%3E%3Cpath d='M21 9v11.993A1 1 0 0 1 20.007 22H3.993A.993.993 0 0 1 3 21.008V2.992C3 2.455 3.447 2 3.998 2H14v6a1 1 0 0 0 1 1h6zm0-2h-5V2.003L21 7z' fill='rgba(255,255,255,1)'/%3E%3C/svg%3E");
@@ -1868,7 +1868,7 @@ a[href$=".webp"i]::before,
 a[href$=".png"i]::before,
 a[href$=".gif"i]::before {
     content:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath fill='none' d='M0 0h24v24H0z'/%3E%3Cpath d='M20 5H4v14l9.292-9.294a1 1 0 0 1 1.414 0L20 15.01V5zM2 3.993A1 1 0 0 1 2.992 3h18.016c.548 0 .992.445.992.993v16.014a1 1 0 0 1-.992.993H2.992A.993.993 0 0 1 2 20.007V3.993zM8 11a2 2 0 1 1 0-4 2 2 0 0 1 0 4z' fill='rgba(255,255,255,1)'/%3E%3C/svg%3E");
-    color: black
+    position: relative;top: 3px;
 }
 
 /* Working Picture (Photoshop & GIMP) */
