@@ -452,7 +452,7 @@ _index_data=
 </section>
 <section class="lyrics" style="display: none;">
 </section>
-{.if|{.=|{.cookie|view.}|list.}|{:
+{.if|{.not|{.=|{.cookie|view.}|grid.}.}|{:
     <script src="/~takeback-filelist.js" defer></script>
 :}.}
 
