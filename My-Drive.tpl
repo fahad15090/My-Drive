@@ -335,10 +335,6 @@ _index_data=
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M5 11.1l2-2 5.5 5.5 3.5-3.5 3 3V5H5v6.1zm0 2.829V19h3.1l2.986-2.985L7 11.929l-2 2zM10.929 19H19v-2.071l-3-3L10.929 19zM4 3h16a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm11.5 7a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" fill="#fff"/></svg>
     </a>
     <a href="./~folder.tar" data-tooltip="{.!Save files in this folder to an archive.}"></a>
-    
-    {.if|{.can mkdir.}|
-    <svg title="{.!New folder.}" id='newfolderBtn' onclick='ask(this.innerHTML, "text", name=> ajax("mkdir", { name:name }))' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12.414 5H21a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h7.414l2 2zM11 12H8v2h3v3h2v-3h3v-2h-3V9h-2v3z" fill="#fff"/></svg>
-    .}
     {.if|{.=|{.cookie|view.}|list.}|{:
         <script>
             function gridView() {
@@ -1412,7 +1408,7 @@ nav {
     grid-area: nav;
     height: 60px;
     width: 100%;
-    background: #1b1b1b;
+    background: #000;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -1546,7 +1542,7 @@ nav .s-div button {
     width: 100%;
     top: 60px;
     z-index: 1;
-    background: #1b1b1b;
+    background: #000;
 }
 
 .additional-panel .file-t {
@@ -1850,7 +1846,7 @@ td a::before {
     text-align: center;position: relative;top: 3px;
 }
 div>a::before {
-    content:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath fill='none' d='M0 0h24v24H0z'/%3E%3Cpath d='M21 9v11.993A1 1 0 0 1 20.007 22H3.993A.993.993 0 0 1 3 21.008V2.992C3 2.455 3.447 2 3.998 2H14v6a1 1 0 0 0 1 1h6zm0-2h-5V2.003L21 7z' fill='rgba(255,255,255,1)'/%3E%3C/svg%3E");
+    content:;
     position: relative;top: 3px;
     }
 
