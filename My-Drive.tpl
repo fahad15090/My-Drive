@@ -369,8 +369,10 @@ _index_data=
                 form.appendChild(input);
                 document.body.appendChild(form);
                 form.submit();
+
             }
         </script>
+
         <svg id="file-v-l" class="file-v-l" onclick="gridView()" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="240" height="240"><path fill="none" d="M0 0h24v24H0z"/><path d="M11 4h10v2H11V4zm0 4h6v2h-6V8zm0 6h10v2H11v-2zm0 4h6v2h-6v-2zM3 4h6v6H3V4zm2 2v2h2V6H5zm-2 8h6v6H3v-6zm2 2v2h2v-2H5z" fill="#fff"/></svg>
     :}.}
  {.if|{.get|can upload.}|
@@ -1552,10 +1554,7 @@ nav .s-div button {
     width: 70%;
 }
 .additional-panel .file-t span a svg{position: relative;top: 4px}
-.additional-panel .file-o {
-display: flex;
-width: 100%;
-justify-content: space-around;
+.additional-panel .file-o {display: flex;width: 100%;justify-content: space-between;
 }
 .additional-panel .file-o .file-p-c {
     margin: 0 5px;display: flex;
@@ -1580,7 +1579,7 @@ justify-content: space-around;
     display: block;
     cursor: pointer;
 }
-@media only screen and (max-width: 850px) {
+@media screen and (max-width: 850px) {
     section#tooltip {
         bottom: unset;
         top: 1.8em;
@@ -1590,8 +1589,16 @@ justify-content: space-around;
     span.login-con > a{margin-left: 2px;}
     nav .logo{margin: 0 0 0 10px;}
     .assigner .file-n{width: 60%;}
+}/*1080p-fixes*/
+@media screen and (min-width:1920px){
+    .assigner .file-s{position: relative;right: -20px;}
 }
-
+@media screen and (max-width:770px){
+    .assigner .file-n{flex: 60%;}
+}
+@media screen and (max-width:550px){
+    .assigner{display: none;}
+}
 @keyframes blinkgreen {
     0% {
         color: green;
@@ -1620,9 +1627,6 @@ margin: 60px 0 10px 0;
 .part1 table#files {
     min-width:100%;
     margin: auto;
-    white-space: nowrap;
-    /* position:; */
-    top: 30px;
 }
 .part1 table#files td:nth-child(1) {
     width: 75%;
@@ -1814,7 +1818,7 @@ div#files {
 }
 div#files>div {
     width: 8em;
-    height: 8.2em;overflow: hidden;word-break: break-word;
+    height: 8em;overflow: hidden;word-break: break-word;
 }
 div#files a::before {
     display: block;
@@ -2332,14 +2336,7 @@ body {
     width: 100%;
     height: 100%;
     background: center / cover;
-    background-image:
-        radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
-        radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
-        radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
-        radial-gradient(white, rgba(255,255,255,.08) 3px, transparent 60px),
-        radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
-    background-size: 550px 550px, 350px 350px, 250px 250px, 950px 950px, 150px 150px;
-    background-position: 0 0, 40px 60px, 130px 270px, 640px 240px, 70px 100px;
+    background:#000;
     z-index: -2;
 }
 .background-image {
@@ -2347,10 +2344,7 @@ body {
     top: 0;
     width: 100%;
     height: 100%;
-    background: center / cover;
-    background-image: url('{.!_background_image.}');
-    background-size: 550px 550px, 350px 350px, 250px 250px, 950px 950px, 150px 150px;
-    background-position: 0 0, 40px 60px, 130px 270px, 640px 240px, 70px 100px;
+    background: #000;
     z-index: -2;
 }
 .background-mask {
@@ -2379,12 +2373,12 @@ a:link, a:visited {
 }
 a:hover {
     color: #333333;
-    background-color: white;
+    background-color: #ff4954;
 }
 a:active {
     color: white;
     background-color: transparent;
-    text-shadow: 0 0 4px white;
+    text-shadow: 0 0 4px #ff4954;
 }
 a {
     transition: all 0.3s;
