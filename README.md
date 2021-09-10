@@ -45,7 +45,7 @@ Run only on (Windows) [HFS 2.4 RC](https://github.com/rejetto/hfs2/releases)
 - Hard drives = (Slow)
 ## Recommend Requirement
 *For better performance,stabilty,Durability*
-- Intel core 2 duo / AMD Athlon or later
+- Intel core 2 Quard / AMD Athlon or later
 - Windows 7 or later
 - 1Gbps network card or up & 1Gbps switch/Router
 - SSD Drives = (Performance/speed)
