@@ -245,8 +245,10 @@ _index_data=
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0Ij48cGF0aCBmaWxsPSJub25lIiBkPSJNMCAwaDI0djI0SDB6Ii8+PHBhdGggZD0iTTE3IDdhOC4wMDMgOC4wMDMgMCAwIDAtNy40OTMgNS4xOWwxLjg3NC43MDNBNi4wMDIgNi4wMDIgMCAwIDEgMjMgMTVhNiA2IDAgMCAxLTYgNkg3QTYgNiAwIDAgMSA1LjAwOCA5LjMzOWE3IDcgMCAwIDEgMTMuNzU3LTIuMTQzQTguMDI3IDguMDI3IDAgMCAwIDE3IDd6Ii8+PC9zdmc+" />
     <meta name="theme-color" content="#000000"/>
-    <meta name="description" content="{.!This is a file sharing site..}" />
+    <meta property="og:image" content="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0Ij48cGF0aCBmaWxsPSJub25lIiBkPSJNMCAwaDI0djI0SDB6Ii8+PHBhdGggZD0iTTE3IDdhOC4wMDMgOC4wMDMgMCAwIDAtNy40OTMgNS4xOWwxLjg3NC43MDNBNi4wMDIgNi4wMDIgMCAwIDEgMjMgMTVhNiA2IDAgMCAxLTYgNkg3QTYgNiAwIDAgMSA1LjAwOCA5LjMzOWE3IDcgMCAwIDEgMTMuNzU3LTIuMTQzQTguMDI3IDguMDI3IDAgMCAwIDE3IDd6Ii8+PC9zdmc+">
+    <meta name="description" content="{.!My-Drive is centerlized storage solution..}" />
     <link rel="stylesheet" href="/~takeback-general.css" defer />
     {.if|{.!_use_font.}|<link rel="stylesheet" href="/~font.css" defer />.}
     @head@
