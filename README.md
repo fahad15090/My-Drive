@@ -55,5 +55,8 @@ Run only on (Windows) [HFS 2.4 RC](https://github.com/rejetto/hfs2/releases)
 - Windows 7 or newer
 - 1Gbps network card or up & 1Gbps switch/Router
 - SSD Drives = (Performance/speed)
-
+## Need some Query!
+- [Whatsapp](https://wa.link/r2dhrv)
+- [Email](mailto:fahadgujjar4994@gmail.com)
+- [Facebook](https://www.facebook.com/fahadgujjar.15090/)
 *Live server is possible but currently testing*
