@@ -22,6 +22,12 @@ Run only on (Windows) [HFS 2.4 RC](https://github.com/rejetto/hfs2/releases)
 - Responsive for mobile devices 📱
 - All features that are in [Takeback template](https://github.com/NaitLee/Takeback-HFS-Template)
 
+![my-drive](https://user-images.githubusercontent.com/60815808/132946333-b8d14bea-45d5-4a53-9dd8-e64300bd4610.png)
+![my-drive](https://user-images.githubusercontent.com/60815808/132946336-284a2eff-1904-4224-aa06-88c482d88ca0.png)![my-drive](https://user-images.githubusercontent.com/60815808/132946522-06517aef-e608-4cff-a883-22c8609ce519.jpg)
+![my-drive1](https://user-images.githubusercontent.com/60815808/132946525-b17e040f-9461-44fe-92e6-451129c11000.jpg)
+
+
+
 ## Developers Notes
 
 *Any contributions are welcome~* 🎉
@@ -39,14 +45,14 @@ Run only on (Windows) [HFS 2.4 RC](https://github.com/rejetto/hfs2/releases)
 
 ## Minimum Requirement
 *For running properly*
-- Intel Pentium 4 or later
-- Windows 7 or later
+- Intel Pentium 4 or newer
+- Windows 7 or newer
 - 100Mbps network card
 - Hard drives = (Slow)
 ## Recommend Requirement
 *For better performance,stabilty,Durability*
-- Intel core 2 Quard / AMD Athlon or later
-- Windows 7 or later
+- Intel quard core or up / AMD quard core or up
+- Windows 7 or newer
 - 1Gbps network card or up & 1Gbps switch/Router
 - SSD Drives = (Performance/speed)
 
