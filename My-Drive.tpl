@@ -373,9 +373,10 @@ _index_data=
 
         <svg id="file-v-l" class="file-v-l" onclick="gridView()" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="240" height="240"><path fill="none" d="M0 0h24v24H0z"/><path d="M11 4h10v2H11V4zm0 4h6v2h-6V8zm0 6h10v2H11v-2zm0 4h6v2h-6v-2zM3 4h6v6H3V4zm2 2v2h2V6H5zm-2 8h6v6H3v-6zm2 2v2h2v-2H5z" fill="#fff"/></svg>
     :}.}
+    <span>
  {.if|{.get|can upload.}|
         <a class="invert" href="./~upload" data-tooltip="{.!Upload some files to this folder.}"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M3 19h18v2H3v-2zM13 5.828V17h-2V5.828L4.929 11.9l-1.414-1.414L12 2l8.485 8.485-1.414 1.414L13 5.83z" fill="rgba(255,255,255,1)"/></svg></a>
-.}    
+.}    </span>
     </div>
 
 </div>
@@ -1815,8 +1816,15 @@ div#files {
     overflow-x: hidden;
 }
 div#files>div {
-    width: 8em;
-    height: 8em;overflow: hidden;word-break: break-word;
+    width: 9em;
+    height: 8em;
+    overflow: hidden;
+    word-break: break-word;
+    border: 2px solid transparent;
+    border-radius: 5px;
+}
+div#files > div:hover{
+    border-color: #ff4954;transition:all 0.5s ease;
 }
 div#files a::before {
     display: block;
@@ -1848,7 +1856,7 @@ td a::before {
     text-align: center;position: relative;top: 3px;
 }
 div>a::before {
-    content:;
+    content:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath fill='none' d='M0 0h24v24H0z'/%3E%3Cpath d='M21 9v11.993A1 1 0 0 1 20.007 22H3.993A.993.993 0 0 1 3 21.008V2.992C3 2.455 3.447 2 3.998 2H14v6a1 1 0 0 0 1 1h6zm0-2h-5V2.003L21 7z' fill='rgba(255,255,255,1)'/%3E%3C/svg%3E");
     position: relative;top: 3px;
     }
 
@@ -1918,6 +1926,7 @@ a[href$=".zip"i]::before {
 
 /* Installation Pack */
 a[href$=".msi"i]::before,
+a[href$=".msu"i]::before,
 a[href$=".tar.gz"i]::before,
 a[href$=".deb"i]::before,
 a[href$=".rpm"i]::before {
@@ -1930,6 +1939,8 @@ a[href$=".vbs"i]::before,
 a[href$=".bat"i]::before,
 a[href$=".conf"i]::before,
 a[href$=".ini"i]::before,
+a[href$=".dat"i]::before,
+a[href$=".reg"i]::before,
 a[href$=".cfg"i]::before,
 a[href$=".sh"i]::before,
 a[href$=".ps1"i]::before,
@@ -1947,6 +1958,11 @@ a[href$=".apk"i]::before{
 a[href$=".c"i]::before,
 a[href$=".cpp"i]::before,
 a[href$=".h"i]::before,
+a[href$=".css"i]::before,
+a[href$=".sass"i]::before,
+a[href$=".scss"i]::before,
+a[href$=".php"i]::before,
+a[href$=".cpp"i]::before,
 a[href$=".htm"i]::before,
 a[href$=".html"i]::before,
 a[href$=".json"i]::before,
@@ -1958,7 +1974,14 @@ a[href$=".js"i]::before {
     content:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath fill='none' d='M0 0h24v24H0z'/%3E%3Cpath d='M16 2l5 5v14.008a.993.993 0 0 1-.993.992H3.993A1 1 0 0 1 3 21.008V2.992C3 2.444 3.445 2 3.993 2H16zm1.657 10L14.12 8.464 12.707 9.88 14.828 12l-2.12 2.121 1.413 1.415L17.657 12zM6.343 12l3.536 3.536 1.414-1.415L9.172 12l2.12-2.121L9.88 8.464 6.343 12z' fill='rgba(255,255,255,1)'/%3E%3C/svg%3E");
     position: relative;top: 3px;
 }
-
+/*Font Files*/
+a[href$=".otf"i]::before,
+a[href$=".woff"i]::before,
+a[href$=".eot"i]::before,
+a[href$=".ttf"i]::before,
+a[href$=".woff2"i]::before{
+    content:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 20' width='21' height='21'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:%23fff;%7D%3C/style%3E%3C/defs%3E%3Ctitle%3Efont-file-white%3C/title%3E%3Cg id='Layer_2' data-name='Layer 2'%3E%3Cg id='Layer_1-2' data-name='Layer 1'%3E%3Cpath class='cls-1' d='M13,0l5,5V19a1,1,0,0,1-1,1H1a1,1,0,0,1-1-1V1A1,1,0,0,1,1,0Z'/%3E%3Cpath d='M14.5,17.06a2.46,2.46,0,0,1-1.5.5,2.5,2.5,0,1,1,1.5-4.5v-.5h1v5h-1Z'/%3E%3Cpolygon points='7.43 14.56 4.57 14.56 3.5 17.56 2.5 17.56 5.5 9.56 6.5 9.56 9.5 17.56 8.5 17.56 7.43 14.56 7.43 14.56'/%3E%3Cpolygon class='cls-1' points='7.07 13.56 6 10.56 4.93 13.56 7.07 13.56 7.07 13.56'/%3E%3Cpath class='cls-1' d='M13,16.56a1.5,1.5,0,1,0-1.5-1.5,1.5,1.5,0,0,0,1.5,1.5Z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
 /* Working Document */
 a[href$=".rtf"i]::before,
 a[href$=".doc"i]::before,
@@ -2015,6 +2038,10 @@ a[href$=".img"i]::before,    /* '.img' is a floppy💾 image💿 */
 a[href$=".dda"i]::before {
     content:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' width='21' height='21' style='/*! background: %23000; */'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:%23fff;%7D%3C/style%3E%3C/defs%3E%3Ctitle%3ECD%3C/title%3E%3Cg id='Layer_2' data-name='Layer 2'%3E%3Cg id='Layer_1-2' data-name='Layer 1'%3E%3Cpath class='cls-1' d='M24,17a7,7,0,1,0,7,7A7,7,0,0,0,24,17Zm0,11a4,4,0,1,1,4-4A4,4,0,0,1,24,28Z'/%3E%3Cpath class='cls-1' d='M24,0A24,24,0,1,0,48,24,24,24,0,0,0,24,0ZM9,24a1,1,0,0,1-2,0A17,17,0,0,1,24,7a1,1,0,0,1,0,2A15,15,0,0,0,9,24Zm15,9a9,9,0,1,1,9-9A9,9,0,0,1,24,33Z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     position: relative;top: 3px;
+}
+/*Url*/
+a[href$=".url"i]::before{
+    content:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1058.76 827' width='24' height='24'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:%23fff;fill-rule:evenodd;%7D%3C/style%3E%3C/defs%3E%3Ctitle%3Einternet%3C/title%3E%3Cg id='Layer_2' data-name='Layer 2'%3E%3Cg id='Layer_1-2' data-name='Layer 1'%3E%3Cpath class='cls-1' d='M539.28,0a414.32,414.32,0,0,1,243,78c100-39,170-51,212-42,47,10,68,39,64,82-2,28-18,63-47,101-78,102-263,247-525,377,166-22,322-77,467-171-6,223-189,402-414,402a408.8,408.8,0,0,1-286-116c-88,33-150,42-188,34-47-10-68-39-65-82,2-29,19-63,48-102,78-101,262-247,525-377-156,21-303,71-440,155C168.28,146,337.28,0,539.28,0Zm-342,645c-17-25-31-52-43-81-16,17-30,33-41,47-17,23-28,41-30,54C104.28,669,142.28,663,197.28,645Zm653-505c20,24,38,49,53,77a577.92,577.92,0,0,0,43-48c17-23,28-41,30-53C953.28,111,912.28,118,850.28,140Z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
 /* Link */
@@ -2357,7 +2384,7 @@ h1 {
     font-size: 1.8em;
 }
 section#tooltip {
-    position: fixed;
+    position: fixed;z-index: 1;
     bottom: 3.6em;
     width: 100%;
     min-height: 2em;
@@ -2403,7 +2430,7 @@ hr, .linebottom {
     border-bottom: 1px solid white;
 }
 #dialog {
-    position: fixed;
+    position: fixed;z-index: 1;
     top: 0;
     width: 100%;
     height: 100%;
