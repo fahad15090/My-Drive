@@ -1,3 +1,4 @@
+*Convert you pc into File storage/Backup server*
 # My-Drive
 My-Drive template that help you to take advantage in managing your server
 
@@ -33,7 +34,7 @@ Run only on (Windows) [HFS 2.4 RC](https://github.com/rejetto/hfs2/releases)
 *Any contributions are welcome~* 🎉
 
 ## if you want to setup your server some instruction/recomendation are listed below 
-*bigner instruction*
+*beginner instruction*
 - firstly download (Windows) [HFS 2.4 RC](https://github.com/rejetto/hfs2/releases)
 - Create folder (HFS) and put all those files in it
 - then download latest release of mine repo
