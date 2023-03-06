@@ -1,0 +1,65 @@
+Pixel 3A Imei Repair Solution
+
+1:Unlock Bootloader 
+
+adb reboot bootloader
+fastboot flashing unlock
+
+2:Flash Phone With Giving Link Framware
+
+https://support.halabtech.com/index.php?a=downloads&b=file&id=521503
+
+3:Root the Phone 
+
+adb reboot bootloader
+fastboot flash boot (boot.img)
+fastboot reboot
+
+(install Magask Apk)
+
+4:Enable Diag Port 
+
+adb shell
+su
+
+resetprop ro.bootmode usbradio
+resetprop ro.build.type userdebug
+setprop sys.usb.config diag,diag_mdm,adb
+diag_mdlog
+
+(after typing commands select file transfer on phone Diag Port Will Be enable)
+
+5:Read QCN With Qfil OR Other Qulcome Tool
+
+
+6:Make Imei 00000 With Giving Commands
+
+adb shell
+
+su
+
+rm /dev/block/by-name/fsg,modemst2,modemst1
+
+ls -l /dev/block/platform/msm_sdcc.1/by-name/
+
+ls -la /dev/block/by-name/
+
+dd if=/dev/zero of=/dev/block/bootdevice/by-name/modemst1
+
+dd if=/dev/zero of=/dev/block/bootdevice/by-name/modemst2
+
+dd if=/dev/zero of=/dev/block/bootdevice/by-name/fsg
+
+(After This Commands Hard Reset Phone From Setting)
+
+7:Write Imei 
+
+Write Imei With Qualcomm imei tool
+
+write QCN With QFIL
+
+Reboot Phone 
+
+All Done 
+
+HALABTECH TEAM
